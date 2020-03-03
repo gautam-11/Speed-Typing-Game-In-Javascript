@@ -44,6 +44,7 @@ function startTimer() {
 }
 
 async function renderNewQuote() {
+  startTimer();
   const quote = await getRandomQuote();
   quoteDisplayElement.innerHTML = "";
   quote.split("").forEach(character => {
@@ -52,7 +53,7 @@ async function renderNewQuote() {
     quoteDisplayElement.appendChild(characterSpan);
   });
   quoteInputElement.value = null;
-  startTimer();
+  
 }
 
 renderNewQuote();
